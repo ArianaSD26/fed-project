@@ -9,11 +9,12 @@
 </svelte:head>
 
 <header>
-	<h1>Workplace Lunch Deliveries</h1>
+	<img src="/images/logo.png" alt="Workplace Lunch Deliveries Logo" />
 </header>
 
 <main>
 	<hr>
+	<img src="/images/banner3.jpg" alt="Register Banner" />
 	<h2>Register</h2>
 	<form method="post" use:enhance>
 		<label>
