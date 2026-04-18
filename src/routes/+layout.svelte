@@ -8,8 +8,6 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-
-
 <header>
 	{#if data.isLoggedIn}
 		You are logged in as: <strong>{data.user.name}</strong>

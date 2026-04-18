@@ -9,8 +9,19 @@
 </svelte:head>
 
 <header>
-	<img src="/images/logo.png" alt="Workplace Lunch Deliveries Logo" />
+	<a href="/"><img src="/images/logo.png" alt="Workplace Lunch Deliveries Logo" /></a>
+	<hr>
 </header>
+
+<nav>
+	<ul>
+		<li><a href="/">HOME</a></li>
+		<li><a href="/login">LOGIN</a></li>
+		<li><a href="/register">REGISTER</a></li>
+		<li><a href="/menu">MENU</a></li>
+		<li><a href="/subscriptions">SUBSCRIPTIONS</a></li>
+	</ul>
+</nav>
 
 <main>
 	<hr>
@@ -39,5 +50,13 @@
 </main>
 
 <footer>
+	<a href="/"><img src="/images/logo2.png" alt="Workplace Lunch Deliveries Logo" /></a>
+	<ul>
+		<li><a href="/">HOME</a></li>
+		<li><a href="/login">LOGIN</a></li>
+		<li><a href="/register">REGISTER</a></li>
+		<li><a href="/menu">MENU</a></li>
+		<li><a href="/subscriptions">SUBSCRIPTIONS</a></li>
+	</ul>
 	Workplace Lunch Deliveries &copy; 2026
 </footer>

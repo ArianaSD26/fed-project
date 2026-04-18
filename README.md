@@ -5,3 +5,7 @@
 2. Page Contents
 - Added page text
 - Added page images
+
+3. Navigation Links
+- Added navigation links
+- Added links to page content and footer
