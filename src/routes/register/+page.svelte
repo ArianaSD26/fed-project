@@ -1,5 +1,7 @@
 <script>
 	import { enhance } from '$app/forms';
+	import Header from '$lib/components/Header.svelte';
+	import Footer from '$lib/components/Footer.svelte';
 
 	let { form } = $props();
 </script>
@@ -8,55 +10,27 @@
 	<title>Register | Workplace Lunch Deliveries</title>
 </svelte:head>
 
-<header>
-	<a href="/"><img src="/images/logo.png" alt="Workplace Lunch Deliveries Logo" /></a>
-	<hr>
-</header>
-
-<nav>
-	<ul>
-		<li><a href="/">HOME</a></li>
-		<li><a href="/login">LOGIN</a></li>
-		<li><a href="/register">REGISTER</a></li>
-		<li><a href="/menu">MENU</a></li>
-		<li><a href="/subscriptions">SUBSCRIPTIONS</a></li>
-	</ul>
-</nav>
+<Header />
 
 <main>
-	<hr>
-	<img src="/images/banner3.jpg" alt="Register Banner" />
-	<h2>Register</h2>
-	<form method="post" use:enhance>
-		<label>
-			Name
-			<input type="text" name="name" required />
-		</label><br>
-		<label>
-			Email
-			<input type="email" name="email" required />
-		</label><br>
-		<label>
-			Password
-			<input type="password" name="password" required />
-		</label><br>
-		<button>Register</button>
-	</form>
-	{#if form?.message}
-		<p style="color: red">{form.message}</p>
-	{/if}
-	<p>Already have an account? <a href="/login">Login</a></p>
-	<hr>
+	<div class="flex flex-col justify-center items-center p-20 text-[#4a2f28]">
+		<h2 class="text-3xl text-center">Register</h2>
+		<div class="w-100 p-5">
+			<form method="post" use:enhance>
+				<label>Name</label>
+				<input type="text" name="name" required class="w-full border rounded-sm my-1 p-2" /><br>
+				<label>Email</label>
+				<input type="email" name="email" required class="w-full border rounded-sm my-1 p-2" /><br>
+				<label>Password</label>
+				<input type="password" name="password" required class="w-full border rounded-sm my-1 p-2" /><br>
+				<button class="block w-full border rounded-sm my-5 p-2">Register</button>
+			</form>
+			{#if form?.message}
+				<p style="color: red">{form.message}</p>
+			{/if}
+			<p>Already have an account? <a href="/login" class="hover:underline">Login</a></p>
+		</div>
+	</div>
 </main>
 
-<footer>
-	<a href="/"><img src="/images/logo2.png" alt="Workplace Lunch Deliveries Logo" /></a>
-	<ul>
-		<li><a href="/">HOME</a></li>
-		<li><a href="/login">LOGIN</a></li>
-		<li><a href="/register">REGISTER</a></li>
-		<li><a href="/menu">MENU</a></li>
-		<li><a href="/subscriptions">SUBSCRIPTIONS</a></li>
-	</ul>
-	Workplace Lunch Deliveries &copy; 2026
-</footer>
+<Footer />

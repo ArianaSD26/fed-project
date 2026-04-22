@@ -1,4 +1,7 @@
 <script>
+	import Header from '$lib/components/Header.svelte';
+	import Footer from '$lib/components/Footer.svelte';
+	
 	let { data } = $props();
 </script>
 
@@ -6,39 +9,20 @@
 	<title>Home | Workplace Lunch Deliveries</title>
 </svelte:head>
 
-<header>
-	<a href="/"><img src="/images/logo.png" alt="Workplace Lunch Deliveries Logo" /></a>
-	<hr>
-</header>
-
-<nav>
-	<ul>
-		<li><a href="/">HOME</a></li>
-		<li><a href="/login">LOGIN</a></li>
-		<li><a href="/register">REGISTER</a></li>
-		<li><a href="/menu">MENU</a></li>
-		<li><a href="/subscriptions">SUBSCRIPTIONS</a></li>
-	</ul>
-</nav>
+<Header />
 
 <main>
-	<hr>
-	<img src="/images/banner.jpg" alt="Home Banner" />
-	<img src="/images/home.png" alt="Home Image" />
-	<h2>Welcome To Our Website!</h2>
-	<p>Workplace Lunch Deliveries is a quick way to order food for your workplace.</p>
-	<p>You can find our <a href="/menu">menu</a> and <a href="/subscriptions">subscriptions</a> here.</p>
-	<hr>
+	<img src="/images/banner.jpg" alt="Home Banner" class="w-full h-[40vh] object-cover" />
+	<div class="flex m-7 bg-[#8bb393] shadow-md">
+		<div>
+			<img src="/images/home.png" alt="Home Image" class="max-w-160" />
+		</div>
+		<div class="flex flex-col justify-center items-center m-10">
+			<h2 class="text-3xl text-center text-[#28382b]">Welcome To Our Website!</h2>
+			<p class="text-xl text-center text-[#28382b]">Workplace Lunch Deliveries is a quick way to order food for your workplace.</p>
+			<p class="text-center text-[#28382b]">You can find our <a href="/menu" class="underline hover:text-[#4d6952]">menu</a> and <a href="/subscriptions" class="underline hover:text-[#4d6952]">subscriptions</a> here.</p>
+		</div>
+	</div>
 </main>
 
-<footer>
-	<a href="/"><img src="/images/logo2.png" alt="Workplace Lunch Deliveries Logo" /></a>
-	<ul>
-		<li><a href="/">HOME</a></li>
-		<li><a href="/login">LOGIN</a></li>
-		<li><a href="/register">REGISTER</a></li>
-		<li><a href="/menu">MENU</a></li>
-		<li><a href="/subscriptions">SUBSCRIPTIONS</a></li>
-	</ul>
-	Workplace Lunch Deliveries &copy; 2026
-</footer>
+<Footer />

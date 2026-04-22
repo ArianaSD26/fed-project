@@ -9,3 +9,8 @@
 3. Navigation Links
 - Added navigation links
 - Added links to page content and footer
+
+4. TailWindCSS and Reusable Components
+- Added CSS styling to all pages
+- Used Google Fonts
+- Implemented reusable Svelte components
