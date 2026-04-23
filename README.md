@@ -14,3 +14,9 @@
 - Added CSS styling to all pages
 - Used Google Fonts
 - Implemented reusable Svelte components
+
+5. Menu and Food Item API Server
+- Created simple menu JSON API server (Node + Express)
+- Used menu Javascript loading page to read from JSON API
+- Used ID from the parameters to request the JSON for a single food item from the API
+- Generate a 404 not found error page if food item not found
