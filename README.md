@@ -20,3 +20,10 @@
 - Used menu Javascript loading page to read from JSON API
 - Used ID from the parameters to request the JSON for a single food item from the API
 - Generate a 404 not found error page if food item not found
+
+6. Processing Order and Checkout
+- Created 3 pages: order, confirmation and checkout
+- Created HTML forms, extracted form contents and send back data from Javascript
+- Saved and loaded cookies
+- Demonstrated redirects
+- Declared and imported Javascript functions

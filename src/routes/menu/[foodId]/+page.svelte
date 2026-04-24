@@ -1,16 +1,11 @@
 <script>
-	import Header from '$lib/components/Header.svelte';
-	import Footer from '$lib/components/Footer.svelte';
     let { data } = $props();
     let food = data.food;
-
 </script>
 
 <svelte:head>
 	<title>{food.name} | Workplace Lunch Deliveries</title>
 </svelte:head>
-
-<Header />
 
 <main>
     <h2 class="text-3xl text-center p-5">{food.name}</h2>
@@ -24,5 +19,3 @@
         </div>
     </div>
 </main>
-
-<Footer />

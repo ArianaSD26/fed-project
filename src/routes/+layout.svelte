@@ -1,6 +1,7 @@
 <script>
 	import favicon from '$lib/assets/favicon.svg';
-	
+	import Header from '$lib/components/Header.svelte';
+	import Footer from '$lib/components/Footer.svelte';
 
 	let { children, data } = $props();
 	import "../app.css";
@@ -11,21 +12,29 @@
 </svelte:head>
 
 <header>
-	{#if data.isLoggedIn}
-		You are logged in as: <strong>{data.user.name}</strong>
-		<br>
-		<form method="post" action="/logout">
-			<button type="submit">Logout</button>
-		</form>
-
-	{:else}
-		You are not logged in - please <a href="/login">login</a>
-	{/if}
+	<nav>
+		<ul class="list-none m-0 p-2 truncate bg-[#e5dcca]">
+			<Header />
+			{#if data.isLoggedIn}
+				<li class="float-right block text-[#4a2f28] text-center px-4.5 py-6"><img src={data.user.image} alt="Profile Picture" class="max-w-12.5"/></li>
+				<li class="float-right block text-[#4a2f28] text-center px-4.5 py-9"><strong>{data.user.name}</strong></li>
+				<form method="post" action="/logout">
+					<li class="float-right">
+						<button type="submit" class="block text-[#4a2f28] text-center px-4.5 py-9 no-underline hover:underline">LOGOUT</button>
+					</li>
+				</form>
+				
+			{:else}
+				<li class="float-right block text-[#4a2f28] text-center px-4.5 py-6"><img src="/images/default.svg" alt="Profile Picture" class="max-w-12.5"/></li>
+				<li class="float-right"><a href="/login" class="block text-[#4a2f28] text-center px-4.5 py-9 no-underline hover:underline">LOGIN</a></li>
+			{/if}
+		</ul>
+	</nav>
 </header>
-<hr>
 
 {@render children()}
 
+<Footer />
 
 <style>
 	#profile_image {

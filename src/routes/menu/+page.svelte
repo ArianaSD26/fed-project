@@ -1,7 +1,4 @@
 <script>
-	import Header from '$lib/components/Header.svelte';
-	import Footer from '$lib/components/Footer.svelte';
-	
 	let { data } = $props();
 	let menu = data.menu;
 </script>
@@ -10,13 +7,11 @@
 	<title>Menu | Workplace Lunch Deliveries</title>
 </svelte:head>
 
-<Header />
-
 <main>
-	<img src="/images/banner4.jpg" alt="Menu Banner" class="w-full h-[40vh] object-cover" />
-	<div class="p-10 text-[#4a2f28]">
+	<img src="/images/banner2.jpg" alt="Menu Banner" class="w-full h-[40vh] object-cover" />
+	<div class="p-5 text-[#4a2f28]">
 		<h2 class="text-3xl text-center pb-7">Menu</h2>
-		<div class="grid grid-cols-3 gap-10">
+		<div class="grid grid-cols-3 gap-10 mx-5">
 			{#each menu as food}
 				<div class="truncate rounded-md shadow-md">
 					<img src="{food.image}" alt="{food.name}" class="w-[30vw] h-[40vh] object-cover" />
@@ -29,5 +24,3 @@
 		</div>
 	</div>
 </main>
-
-<Footer />

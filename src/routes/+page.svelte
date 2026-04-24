@@ -1,15 +1,10 @@
 <script>
-	import Header from '$lib/components/Header.svelte';
-	import Footer from '$lib/components/Footer.svelte';
-	
 	let { data } = $props();
 </script>
 
 <svelte:head>
 	<title>Home | Workplace Lunch Deliveries</title>
 </svelte:head>
-
-<Header />
 
 <main>
 	<img src="/images/banner.jpg" alt="Home Banner" class="w-full h-[40vh] object-cover" />
@@ -24,5 +19,3 @@
 		</div>
 	</div>
 </main>
-
-<Footer />
