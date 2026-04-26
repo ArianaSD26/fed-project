@@ -1,1 +1,47 @@
-[]
+[
+  {
+    "id": 1,
+    "items": [
+      {
+        "id": 7,
+        "name": "Brownie",
+        "price": 2.99,
+        "quantity": "5"
+      }
+    ],
+    "filter": [
+      "vegetarian",
+      "vegan",
+      "gluten-free",
+      "dairy-free",
+      "nut-free"
+    ],
+    "address": "35 finn street, skerries, dublin 7",
+    "payment": "card"
+  },
+  {
+    "id": 2,
+    "name": "Joe",
+    "items": [
+      {
+        "id": 1,
+        "name": "Sandwich",
+        "price": 4.99,
+        "quantity": "5"
+      },
+      {
+        "id": 9,
+        "name": "Cookie",
+        "price": 2.99,
+        "quantity": "7"
+      }
+    ],
+    "filter": [
+      "vegetarian",
+      "gluten-free",
+      "nut-free"
+    ],
+    "address": "35 finn street, skerries, dublin 7",
+    "payment": "cash"
+  }
+]

@@ -1,8 +1,6 @@
 import { fail, redirect } from '@sveltejs/kit';
 import { auth } from '$lib/server/auth';
 import { APIError } from 'better-auth/api';
-import fs from 'fs';
-import path from 'path';
 
 export const load = async (event) => {
 	if (event.locals.user) {
@@ -12,28 +10,23 @@ export const load = async (event) => {
 };
 
 export const actions = {
-    default: async (event) => {
-        const data = await event.request.formData();
+	default: async (event) => {
+		const formData = await event.request.formData();
+		const email = formData.get('email')?.toString() ?? '';
+		const password = formData.get('password')?.toString() ?? '';
+		const name = formData.get('name')?.toString() ?? '';
 
-		const name = data.get('name');
-        const email = data.get('email');
-        const password = data.get('password');
+		try {
+			await auth.api.signUpEmail({
+				body: { email, password, name }
+			});
+		} catch (error) {
+			if (error instanceof APIError) {
+				return fail(400, { message: error.message || 'Registration failed' });
+			}
+			return fail(500, { message: 'Unexpected error' });
+		}
 
-        const fileData = fs.readFileSync('src/lib/data/users.json', 'utf-8');
-        const users = JSON.parse(fileData);
-        const id = users.length + 1;
-		const image = '/images/default.svg';
-
-        users.push({
-            id,
-			name,
-            email,
-            password,
-			image
-        });
-
-        fs.writeFileSync('src/lib/data/users.json', JSON.stringify(users, null, 2));
-
-        return redirect(302, '/login');
-    }
+		return redirect(302, '/');
+	}
 };

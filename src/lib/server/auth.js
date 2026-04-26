@@ -19,7 +19,12 @@ export const auth = betterAuth({
 			},
 			category: {
 				type: 'string',
-				defaultValue: '',
+				defaultValue: 'Basic',
+				required: false
+			},
+			role: {
+				type: 'string',
+				defaultValue: 'ROLE_CUSTOMER',
 				required: false
 			}
 		}

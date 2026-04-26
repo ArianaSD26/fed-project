@@ -30,12 +30,12 @@ export async function insertUsers(dbInstance = db) {
 			name:          u.name,
 			email:         u.email,
 			emailVerified: false,
-			image:         u.image ?? null,
+			image:         u.image,
 			createdAt:     now,
 			updatedAt:     now,
 			balance:       u.balance,
-			category:      u.category,
-			role:          u.role,
+			category:      u.category ?? "Basic",
+			role:          u.role ?? "ROLE_CUSTOMER",
 		}).run();
 
 		dbInstance.insert(account).values({

@@ -3,22 +3,26 @@ import fs from 'fs';
 import path from 'path';
 
 export function load({ cookies }) {
-    let order = cookies.get('order');
-    let orderItems = JSON.parse(order);
-    
-    return { orderItems };
+    let cookie = cookies.get('order');
+    if (!cookie) {
+        return { items: [], filter: null };
+    }
+
+    let { items, filter } = JSON.parse(cookie);
+    return { items, filter };
 }
 
 export const actions = {
     default: async ({ request, cookies }) => {
         const data = await request.formData();
 
+        const name = data.get('name');
         const address = data.get('address');
         const payment = data.get('payment');
 
         const cookie = cookies.get('order');
 
-        const items = JSON.parse(cookie);
+        const { items, filter } = JSON.parse(cookie);
 
         const fileData = fs.readFileSync('src/lib/data/orders.json', 'utf-8');
         const orders = JSON.parse(fileData);
@@ -26,7 +30,9 @@ export const actions = {
 
         orders.push({
             id,
+            name,
             items,
+            filter,
             address,
             payment
         });

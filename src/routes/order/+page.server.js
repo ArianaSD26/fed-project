@@ -29,13 +29,13 @@ export const actions = {
         const response = await fetch(endpoint);
         const menu = await response.json();
         
-        const orderItems = [];
+        const items = [];
         
         menu.forEach((food) => {
             const quantity = data.get(food.id + '_quantity');
             
             if (quantity && quantity > 0) {
-                orderItems.push({
+                items.push({
                     id: food.id,
                     name: food.name,
                     price: food.price,
@@ -44,11 +44,19 @@ export const actions = {
             }
         });
         
-        if (orderItems.length === 0) {
+        if (items.length === 0) {
             return fail(400, { message: "Please select at least one item."});
         }
+        
+        let filter;
+
+        if (data.get("comment")) {
+            filter = data.get("comment");
+        } else {
+            filter = data.getAll("check");
+        }
             
-        cookies.set('order', JSON.stringify(orderItems), { path: '/' });
+        cookies.set('order', JSON.stringify({items, filter}), { path: '/' });
         
         return redirect(302, '/checkout');
     }

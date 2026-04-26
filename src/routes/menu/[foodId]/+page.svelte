@@ -10,12 +10,12 @@
 <main>
     <h2 class="text-3xl text-center p-5">{food.name}</h2>
     <div class="flex flex-col items-center justify-center truncate rounded-md shadow-md">
-        <img src="{food.image}" alt="{food.name}" class="w-[35vw] h-[45vh] object-cover" />
-        <div class="flex justify-center">
-            <ul class="p-7">
+        <img src="{food.image}" alt="{food.name}" class="w-[30vw] h-[45vh] object-cover pb-3" />
+            <ul class="pb-7">
                 <li class="text-xl">Price: €{food.price}</li>
-                <li>Description: {food.description}</li>
+                <li>{food.description}</li>
+                <li>Allergens: {food.allergens}</li>
+                <li>Calories: {food.calories} kcal</li>
             </ul>
-        </div>
     </div>
 </main>

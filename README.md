@@ -27,3 +27,8 @@
 - Saved and loaded cookies
 - Demonstrated redirects
 - Declared and imported Javascript functions
+
+7. Role and Subscription Specific Access
+- Added reset database button specificly visible to admins
+- Created different filters depending on the subscription type of the user
+- Updated individual food items page

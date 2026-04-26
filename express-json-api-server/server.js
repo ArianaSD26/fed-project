@@ -12,63 +12,81 @@ let menu = [
         "name": "Sandwich",
         "price": 4.99,
         "image": "/images/food1.jpg",
-        "description": "An egg mayo and cheese sandwich on fresh bread."
+        "description": "An egg mayo and cheese sandwich on fresh bread.",
+        "allergens": "Eggs, Dairy, Gluten",
+        "calories": 375
     },
     {
         "id": 2,
         "name": "Wrap",
         "price": 4.99,
         "image": "/images/food2.jpg",
-        "description": "A vegan wrap filled with fresh ingredients."
+        "description": "A crunchy wrap filled with fresh ingredients.",
+        "allergens": "Gluten",
+        "calories": 550
     },
     {
         "id": 3,
         "name": "Sausage Roll",
         "price": 3.99,
         "image": "/images/food3.jpg",
-        "description": "A fresh pork sausage roll made with a beautiful crispy pastry."
+        "description": "A fresh pork sausage roll made with a beautiful crispy pastry.",
+        "allergens": "Eggs, Dairy, Gluten",
+        "calories": 350
     },
     {
         "id": 4,
         "name": "Soup",
         "price": 3.99,
         "image": "/images/food4.jpg",
-        "description": "Warm homemade soup of the day."
+        "description": "Warm homemade soup of the day.",
+        "allergens": "Celery",
+        "calories": 225
     },
     {
         "id": 5,
         "name": "Salad",
         "price": 3.49,
         "image": "/images/food5.jpg",
-        "description": "Freshly prepared assorted salad."
+        "description": "Freshly prepared assorted salad.",
+        "allergens": "None",
+        "calories": 372
     },
     {
         "id": 6,
         "name": "Fruit",
         "price": 3.49,
         "image": "/images/food6.jpg",
-        "description": "Freshly cut mixed fruit."
+        "description": "Freshly cut mixed fruit.",
+        "allergens": "None",
+        "calories": 173
     },
     {
         "id": 7,
-        "name": "Brownie",
+        "name": "Brownies",
         "price": 2.99,
         "image": "/images/food7.jpg",
-        "description": "Fresh out of the oven chocolate fudge brownie."
+        "description": "Fresh out of the oven chocolate fudge brownie.",
+        "allegens": "Dairy, Eggs, Gluten, Nuts",
+        "calories": 205
     },
     {
         "id": 8,
         "name": "Muffin",
         "price": 2.99,
         "image": "/images/food8.jpg",
-        "description": "Fresh out of the oven bluebarry muffin."
+        "description": "Fresh out of the oven bluebarry muffin.",
+        "allergens": "Dairy, Eggs, Gluten",
+        "calories": 385
     },
     {
         "id": 9,
-        "name": "Cookie",
+        "name": "Cookies",
         "price": 2.99,
         "image": "/images/food9.jpg",
-        "description": "Fresh out of the oven chocolate chip cookie."
+        "description": "Fresh out of the oven chocolate chip cookie.",
+        "allergens": "Dairy, Eggs, Gluten, Nuts",
+        "calories": 195
     }
 ];
 
@@ -89,8 +107,8 @@ app.get('/menu/:id', (req, res) => {
 
 // Route to create a new food item
 app.post('/menu', (req, res) => {
-   const { name, price, image, description } = req.body;
-   const newFood = { id: menu.length + 1, name, price, image, description };
+   const { name, price, image, description, allergens } = req.body;
+   const newFood = { id: menu.length + 1, name, price, image, description, allergens };
    menu.push(newFood);
    res.status(201).json(newFood);
 });

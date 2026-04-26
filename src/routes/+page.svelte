@@ -1,7 +1,3 @@
-<script>
-	let { data } = $props();
-</script>
-
 <svelte:head>
 	<title>Home | Workplace Lunch Deliveries</title>
 </svelte:head>

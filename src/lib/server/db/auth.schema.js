@@ -8,7 +8,7 @@ export const user = sqliteTable("user", {
   emailVerified: integer("email_verified", { mode: "boolean" })
     .default(false)
     .notNull(),
-  image: text("image"),
+  image: text("image").default("/images/default.svg"),
   createdAt: integer("created_at", { mode: "timestamp_ms" })
     .default(sql`(cast(unixepoch('subsecond') * 1000 as integer))`)
     .notNull(),
@@ -17,7 +17,8 @@ export const user = sqliteTable("user", {
     .$onUpdate(() => /* @__PURE__ */ new Date())
     .notNull(),
   balance: integer("balance").default(0),
-  category: text("category").default(""),
+  category: text("category").default("Basic"),
+  role: text("role").default("ROLE_CUSTOMER").notNull(),
 });
 
 export const session = sqliteTable(

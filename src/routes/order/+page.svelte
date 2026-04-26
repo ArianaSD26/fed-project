@@ -13,6 +13,10 @@
         <div class="flex flex-col justify-center items-center p-20 text-[#4a2f28]">
             <h2 class="text-3xl text-center">Order</h2>
             <div class="w-125 p-5">
+                {#if form?.message}
+                    <p class="text-center text-red-500">{form.message}</p>
+                    <br>
+                {/if}
                 <form method="post" use:enhance>
                     <table class="w-full truncate rounded-lg shadow-md text-center">
                         <thead>
@@ -33,8 +37,34 @@
                             {/each}
                         </tbody>
                     </table>
+                    
+                    {#if data.user?.category === "Premium"}
+                        <div class="flex flex-col justify-center items-center m-3 text-[#4a2f28]">
+                            <label for="comment" class="font-bold">Dietary Preferences</label>
+                            <textarea id="comment" name="comment" rows="4" cols="40" class="border-2 rounded-md p-2"></textarea>
+                        </div>
+				    {:else}
+                        <div class="p-5 text-[#4a2f28]">
+                            <p class="font-bold">Dietary Preferences</p>
+                            <input type="checkbox" id="vegetarian" name="check" value="vegetarian">
+                            <label for="vegetarian">Vegetarian</label><br>
+
+                            <input type="checkbox" id="vegan" name="check" value="vegan">
+                            <label for="vegan">Vegan</label><br>
+
+                            <input type="checkbox" id="gluten" name="check" value="gluten-free">
+                            <label for="gluten">Gluten-Free</label><br>
+
+                            <input type="checkbox" id="dairy" name="check" value="dairy-free">
+                            <label for="dairy">Dairy-Free</label><br>
+
+                            <input type="checkbox" id="nut" name="check" value="nut-free">
+                            <label for="nut">Nut-Free</label><br>
+                        </div>
+                    {/if}
+                    
                     <button class="block w-full border rounded-sm my-5 p-2 hover:underline">Checkout</button>
-                </form> 
+                </form>
             </div>
         </div>
     {:else}
