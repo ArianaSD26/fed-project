@@ -19,7 +19,6 @@
 - Created simple menu JSON API server (Node + Express)
 - Used menu Javascript loading page to read from JSON API
 - Used ID from the parameters to request the JSON for a single food item from the API
-- Generate a 404 not found error page if food item not found
 
 6. Processing Order and Checkout
 - Created 3 pages: order, confirmation and checkout
@@ -32,3 +31,7 @@
 - Added reset database button specificly visible to admins
 - Created different filters depending on the subscription type of the user
 - Updated individual food items page
+
+8. User Allowance and Custom Error Page
+- Implemented a balance system based on subscription category
+- Added a custom 404 error page

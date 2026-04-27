@@ -51,8 +51,6 @@
                 </tbody>
             </table>
             <form method="post" use:enhance class="pt-5">
-                <label>Name</label>
-                <input type="text" name="name" required class="w-full border rounded-sm my-1 p-2" /><br>
                 <label>Delivery Address</label>
                 <input type="text" name="address" required class="w-full border rounded-sm my-1 p-2" /><br>
                 <p>Payment Type</p>

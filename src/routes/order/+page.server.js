@@ -23,7 +23,7 @@ export const load = async (event) => {
 };
 
 export const actions = {
-    default: async ({ request, cookies }) => {
+    default: async ({ request, cookies, locals }) => {
         const data = await request.formData();
         
         const response = await fetch(endpoint);
@@ -31,8 +31,21 @@ export const actions = {
         
         const items = [];
         
+        let subtotal = 0;
+        
         menu.forEach((food) => {
-            const quantity = data.get(food.id + '_quantity');
+            const quantity = parseInt(data.get(food.id + '_quantity'));
+            subtotal += food.price * quantity;
+        });
+        
+        const user = locals.user;
+        
+        if (subtotal > user.balance) {
+            return fail(400, { message: `Order exceeds your balance. (€${user.balance})` });
+        }
+        
+        menu.forEach((food) => {
+            const quantity = parseInt(data.get(food.id + '_quantity'));
             
             if (quantity && quantity > 0) {
                 items.push({

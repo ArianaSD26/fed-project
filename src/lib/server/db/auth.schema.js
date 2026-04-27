@@ -18,7 +18,7 @@ export const user = sqliteTable("user", {
     .notNull(),
   balance: integer("balance").default(0),
   category: text("category").default("Basic"),
-  role: text("role").default("ROLE_CUSTOMER").notNull(),
+  role: text("role").default("ROLE_CUSTOMER"),
 });
 
 export const session = sqliteTable(

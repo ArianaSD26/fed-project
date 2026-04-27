@@ -10,7 +10,7 @@ let menu = [
     {
         "id": 1,
         "name": "Sandwich",
-        "price": 4.99,
+        "price": 5.99,
         "image": "/images/food1.jpg",
         "description": "An egg mayo and cheese sandwich on fresh bread.",
         "allergens": "Eggs, Dairy, Gluten",
@@ -19,7 +19,7 @@ let menu = [
     {
         "id": 2,
         "name": "Wrap",
-        "price": 4.99,
+        "price": 5.99,
         "image": "/images/food2.jpg",
         "description": "A crunchy wrap filled with fresh ingredients.",
         "allergens": "Gluten",
@@ -28,7 +28,7 @@ let menu = [
     {
         "id": 3,
         "name": "Sausage Roll",
-        "price": 3.99,
+        "price": 5.99,
         "image": "/images/food3.jpg",
         "description": "A fresh pork sausage roll made with a beautiful crispy pastry.",
         "allergens": "Eggs, Dairy, Gluten",
@@ -37,7 +37,7 @@ let menu = [
     {
         "id": 4,
         "name": "Soup",
-        "price": 3.99,
+        "price": 4.49,
         "image": "/images/food4.jpg",
         "description": "Warm homemade soup of the day.",
         "allergens": "Celery",
@@ -46,7 +46,7 @@ let menu = [
     {
         "id": 5,
         "name": "Salad",
-        "price": 3.49,
+        "price": 4.49,
         "image": "/images/food5.jpg",
         "description": "Freshly prepared assorted salad.",
         "allergens": "None",
@@ -55,7 +55,7 @@ let menu = [
     {
         "id": 6,
         "name": "Fruit",
-        "price": 3.49,
+        "price": 4.49,
         "image": "/images/food6.jpg",
         "description": "Freshly cut mixed fruit.",
         "allergens": "None",
@@ -64,7 +64,7 @@ let menu = [
     {
         "id": 7,
         "name": "Brownies",
-        "price": 2.99,
+        "price": 3.99,
         "image": "/images/food7.jpg",
         "description": "Fresh out of the oven chocolate fudge brownie.",
         "allegens": "Dairy, Eggs, Gluten, Nuts",
@@ -73,7 +73,7 @@ let menu = [
     {
         "id": 8,
         "name": "Muffin",
-        "price": 2.99,
+        "price": 3.99,
         "image": "/images/food8.jpg",
         "description": "Fresh out of the oven bluebarry muffin.",
         "allergens": "Dairy, Eggs, Gluten",
@@ -82,7 +82,7 @@ let menu = [
     {
         "id": 9,
         "name": "Cookies",
-        "price": 2.99,
+        "price": 3.99,
         "image": "/images/food9.jpg",
         "description": "Fresh out of the oven chocolate chip cookie.",
         "allergens": "Dairy, Eggs, Gluten, Nuts",

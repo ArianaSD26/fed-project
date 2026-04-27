@@ -30,7 +30,7 @@ export async function insertUsers(dbInstance = db) {
 			name:          u.name,
 			email:         u.email,
 			emailVerified: false,
-			image:         u.image,
+			image:         u.image ?? null,
 			createdAt:     now,
 			updatedAt:     now,
 			balance:       u.balance,

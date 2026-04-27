@@ -15,10 +15,23 @@ export const actions = {
 		const email = formData.get('email')?.toString() ?? '';
 		const password = formData.get('password')?.toString() ?? '';
 		const name = formData.get('name')?.toString() ?? '';
+		const category = formData.get('category')?.toString() ?? '';
+		
+		let balance = 0;
+		
+		if (category == "Premium") {
+			balance = 30;
+		}
+		else if (category == "Plus") {
+			balance = 15;
+		}
+		else {
+			balance = 10;
+		}
 
 		try {
 			await auth.api.signUpEmail({
-				body: { email, password, name }
+				body: { name, email, password, balance, category }
 			});
 		} catch (error) {
 			if (error instanceof APIError) {

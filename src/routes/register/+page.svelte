@@ -1,6 +1,5 @@
 <script>
 	import { enhance } from '$app/forms';
-
 	let { form } = $props();
 </script>
 
@@ -19,6 +18,12 @@
 				<input type="email" name="email" required class="w-full border rounded-sm my-1 p-2" /><br>
 				<label>Password</label>
 				<input type="password" name="password" required class="w-full border rounded-sm my-1 p-2" /><br>
+				<label for="category">Subscription Type: </label>
+				<select name="category" id="category" class="border">
+					<option value="Basic">Basic</option>
+					<option value="Plus">Plus</option>
+					<option value="Premium">Premium</option>
+				</select>
 				<button class="block w-full border rounded-sm my-5 p-2 hover:underline">Register</button>
 			</form>
 			{#if form?.message}

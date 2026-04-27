@@ -13,10 +13,10 @@ export function load({ cookies }) {
 }
 
 export const actions = {
-    default: async ({ request, cookies }) => {
+    default: async ({ request, cookies, locals }) => {
         const data = await request.formData();
 
-        const name = data.get('name');
+        const name = locals.user.name;
         const address = data.get('address');
         const payment = data.get('payment');
 

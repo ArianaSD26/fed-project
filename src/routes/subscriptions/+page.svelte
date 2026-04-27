@@ -5,7 +5,8 @@
 <main>
 	<img src="/images/banner3.jpg" alt="Subscription Options Banner" class="w-full h-[40vh] object-cover" />
 	<div class="p-5 text-[#4a2f28]">
-		<h2 class="text-3xl text-center pb-5">Subscription Options</h2>
+		<h2 class="text-3xl text-center">Subscription Options</h2>
+		<p class="text-sm text-center pb-5">*Tax not included in prices</p>
 		<div class="flex gap-5 justify-center">
 			<div class="truncate rounded-md shadow-md">
 				<img src="/images/basic.jpg" alt="Basic Image" class="w-[30vw] h-[40vh] object-cover" />
@@ -36,7 +37,7 @@
 				<h3 class="text-center text-2xl p-3">Premium</h3>
 				<div class="flex justify-center">
 					<ul class="list-disc pb-7">
-						<li>Price: Custom amount per person</li>
+						<li>Price: €30 per person</li>
 						<li>Full menu selection</li>
 						<li>Custom dietary filtering</li>
 						<li>Monthly billing</li>
